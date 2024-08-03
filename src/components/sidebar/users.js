@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import '../styles_css/users.css'
 import profile  from '../images/profile 2.PNG'
+import logo from '../images/messenger_image.png';
 
 const UserMessages = () => {
   const [users, setUsers] = useState([]);
@@ -41,15 +42,20 @@ const UserMessages = () => {
 };
 
 const Users = () => {
+
+    const [darkMode, setDarkMode] = useState(false);
+
+
   return (
-    <div className="app-container2">
+    <div className={`app-container2 ${darkMode ? 'dark-mode' : ''}`}>
       <div className="sidebar2">
         <UserMessages />
       </div>
       <div className="main-content2">
+        
         <div className="welcome-message">
-          <img src="https://via.placeholder.com/100" alt="Welcome Icon" />
-          <h1>Welcome to the Odin Messaging App!</h1>
+          <img src={logo} alt="Welcome Icon" />
+          <h1>Welcome to the Mayorwise Messaging App!</h1>
         </div>
       </div>
     </div>

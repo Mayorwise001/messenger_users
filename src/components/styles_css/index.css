@@ -22,7 +22,7 @@ body{
 }
 
 .dark-mode {
-  background-color: #1e1e1e;
+  background-color: #000000;
   color: #fff;
 }
 
@@ -172,7 +172,7 @@ h1, .login {
 }
 
 .dark-mode .message {
-  color: #ffffff;
+  color: #000000;
 }
 
 a{
@@ -209,7 +209,7 @@ a{
 }
 
 .drawerPaper {
-  background-color: #1e1e1e;
+  background-color: #000000;
 }
 
 .active {
@@ -220,7 +220,7 @@ a{
 .sidebar {
   width: 200px;
   height: 100vh;
-  background-color: #1e1e1e;
+  background-color: #000000;
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -265,7 +265,7 @@ a{
 }
 
 .dark-mode .sidebar {
-  background-color: #333;
+  background-color: #000000;
   color: #fff;
 }
 
@@ -283,7 +283,7 @@ a{
 }
 
 .dark-mode .main-content {
-  background-color: #1e1e1e;
+  background-color: #000000;
   color: #fff;
 }
 
@@ -396,6 +396,43 @@ a{
   color: #aaa;
   font-size: 0.8em;
 }
+
+/* Dark mode styles */
+.dark-mode .sidebar2 {
+  background-color: #000000;
+  color: #fff;
+}
+
+.dark-mode .main-content2 {
+  background-color: #000000;
+  color: #fff;
+}
+.dark-mode .welcome-message {
+  background-color: #000000;
+  color: #fff;
+}
+
+.dark-mode .user-messages-container .user-messages-item {
+  background-color: #000000;
+  cursor: pointer;
+}
+.dark-mode .user-messages-item:hover {
+  background-color: #525050;
+}
+.dark-mode .user-messages-title,
+.dark-mode .user-messages-name,
+.dark-mode .user-messages-preview,
+.dark-mode .user-messages-status 
+{
+  color: #ffffff;
+}
+
+.dark-mode .welcome-message img {
+  filter: brightness(0.8);
+}
+
+
+
 
 
 /* Media Queries for Mobile Devices */
