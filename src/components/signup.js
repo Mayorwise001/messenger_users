@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import '../index.css'; // Import the CSS file
+import './styles_css/index.css'; // Import the CSS file
 import logo from './messenger_image.png'; // Assuming you have a logo image file
 
 const SignUpForm = () => {
