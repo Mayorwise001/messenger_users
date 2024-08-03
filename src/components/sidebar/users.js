@@ -10,7 +10,7 @@ const UserMessages = () => {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const res = await axios.get('http://localhost:3000/api/users');
+        const res = await axios.get('https://backend-for-messenger.onrender.com/api/users');
         setUsers(res.data);
       } catch (err) {
         console.error(err);

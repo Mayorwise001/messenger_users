@@ -217,6 +217,45 @@ a{
 }
 
 
+/* Media Queries for Mobile Responsiveness */
+@media (max-width: 768px) {
+  .form-wrapper {
+    padding: 1rem;
+    box-shadow: none;
+  }
+
+  .toggle-container {
+    justify-content: center;
+  }
+
+  .input-group label {
+    margin-bottom: 0.3rem;
+  }
+
+  .submit-button {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .message {
+    font-size: 0.9rem;
+  }
+
+  .button-group {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .button-group .btn {
+    margin-top: 0.5rem;
+  }
+
+  h1 {
+    font-size: 1.2rem;
+  }
+}
+
+
 .sidebar {
   width: 200px;
   height: 100vh;
