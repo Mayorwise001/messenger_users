@@ -219,10 +219,21 @@ a{
 
 /* Media Queries for Mobile Responsiveness */
 @media (max-width: 768px) {
+body{
+  padding: 0px;
+  margin: 0px;
+  max-width: 100%;
+}
+
+.app-container{
+  max-width: 100%;
+  overflow: hidden;
+}
+
   .form-wrapper {
     padding: 1rem;
     box-shadow: none;
-    max-width: 90%;
+    max-width: 100%;
   }
 
   .toggle-container {
@@ -236,12 +247,14 @@ a{
   .input-group input {
     font-size: 0.9rem;
     margin-left: 5px;
-    width: 100%;
+
+    width: 90%;
   }
 
   .submit-button {
     padding: 0.5rem;
     font-size: 0.9rem;
+    width: 90%;
   }
 
   .message {
