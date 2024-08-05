@@ -7,6 +7,7 @@ import Profile from './sidebar/profile';
 import Users from './sidebar/users'
 import Chats from './sidebar/chats';
 import Settings from './sidebar/settings';
+import SignOut from './sidebar/logout';
 
 
 const App = () => {
@@ -77,7 +78,7 @@ const App = () => {
             onClick={() => setActiveTab('Logout')}
           >
             <FaSignOutAlt className="sidebar-icon" />
-            <span className="sidebar-text"><Link to="/logout" className="btn logout">Logout</Link></span>
+            <span className="sidebar-text btn logout">Logout</span>
           </div>
           <div className="sidebar-item toggle-dark-mode" onClick={toggleDarkMode}>
           {darkMode ? <FaSun className="sidebar-icon" /> : <FaMoon className="sidebar-icon" />}
@@ -94,7 +95,7 @@ const App = () => {
         {activeTab === 'Users' && <Users />}
         {activeTab === 'Chats' && <Chats />}
         {activeTab === 'Settings' && <Settings />}
-        {activeTab === 'Logout' && <Logout />}
+        {activeTab === 'Logout' && <SignOut/>}
       </div>
     </div>
   );
@@ -102,6 +103,6 @@ const App = () => {
 
 
 
-const Logout = () => <div>Logout Content</div>;
+
 
 export default App;
