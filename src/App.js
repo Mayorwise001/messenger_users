@@ -10,11 +10,11 @@ function App() {
 
       <Router>
             <Routes>
-            {/* <Route path="/" element={<ProtectedRoute />}>
+            <Route path="/" element={<ProtectedRoute />}>
                     <Route index element={<Home />} />
                     <Route/>
-                    </Route> */}
-                <Route path='/' element={<Home/>}/>
+                    </Route>
+                {/* <Route path='/' element={<Home/>}/> */}
                 <Route path='/sign-up' element={<SignUpForm/>}/>
                 <Route path='/login' element={<Login/>}/>
                 <Route path='/logout' element={<SignOut/>}/>
