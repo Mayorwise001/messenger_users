@@ -235,7 +235,8 @@ a{
 
   .input-group input {
     font-size: 0.9rem;
-    margin: 10px;
+    margin-left: 5px;
+    width: 100%;
   }
 
   .submit-button {
