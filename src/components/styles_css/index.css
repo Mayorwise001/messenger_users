@@ -242,11 +242,12 @@ body{
 
   .input-group label {
     margin-bottom: 0.3rem;
+    margin-left: 9px;
   }
 
   .input-group input {
     font-size: 0.9rem;
-    margin-left: 5px;
+    margin-left: 9px;
 
     width: 90%;
   }
