@@ -220,10 +220,9 @@ a{
 /* Media Queries for Mobile Responsiveness */
 @media (max-width: 768px) {
   .form-wrapper {
-    padding: 2rem;
+    padding: 1rem;
     box-shadow: none;
-    max-width: 400px;
-    width: 100%;
+    max-width: 90%;
   }
 
   .toggle-container {
@@ -232,6 +231,11 @@ a{
 
   .input-group label {
     margin-bottom: 0.3rem;
+  }
+
+  .input-group input {
+    font-size: 0.9rem;
+    margin: 10px;
   }
 
   .submit-button {
@@ -256,6 +260,7 @@ a{
     font-size: 1.2rem;
   }
 }
+
 
 
 .sidebar {
