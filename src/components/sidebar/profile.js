@@ -70,6 +70,7 @@ const Profile = () => {
 
       if (res.status === 200) {
         setEditable(false);
+        setPreviewImage(userData.profilePicture ? `https://backend-for-messenger.onrender.com/${userData.profilePicture}` : defaultAvatar); // Update the preview image
         // setPreviewImage(userData.profilePicture); // Update the preview image to the saved profile picture
       } else {
         console.error('Failed to save user data.');
