@@ -122,8 +122,8 @@ const Profile = () => {
       <div className="profile-picture-container" style={{ display: 'flex', alignItems: 'center' }}>
       <div style={{ position: 'relative', width: 100, height: 100 }}>
       <img
-        // src={previewImage || userData.profilePicture || defaultAvatar}
-        src={previewImage}
+        src={previewImage || userData.profilePicture || defaultAvatar}
+        // src={previewImage}
         alt="Profile"
         className="profile-picture"
         style={{ width: '100%', height: '100%', borderRadius: '50%' }}
