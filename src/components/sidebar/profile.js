@@ -70,7 +70,7 @@ const Profile = () => {
 
       if (res.status === 200) {
         setEditable(false);
-        // setPreviewImage(userData.profilePicture); // Update the preview image to the saved profile picture
+        setPreviewImage(userData.profilePicture); // Update the preview image to the saved profile picture
       } else {
         console.error('Failed to save user data.');
       }
