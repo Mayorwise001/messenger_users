@@ -90,13 +90,13 @@ const App = () => {
         </div>
       </div>
       {/* Main content */}
-      <div className="main-content">
-        {activeTab === 'Profile' && <Profile />}
+      {activeTab === 'Profile' && <Profile />}
         {activeTab === 'Users' && <Users />}
         {activeTab === 'Chats' && <Chats />}
         {activeTab === 'Settings' && <Settings />}
         {activeTab === 'Logout' && <SignOut/>}
-      </div>
+
+
     </div>
   );
 };

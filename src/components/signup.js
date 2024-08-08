@@ -3,6 +3,7 @@ import axios from 'axios';
 import './styles_css/index.css'; // Import the CSS file
 import logo from './images/messenger_image.png'; // Assuming you have a logo image file
 
+
 const SignUpForm = () => {
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');

@@ -9,7 +9,7 @@ const SignOut = () => {
   useEffect(() => {
     const signOut = async () => {
       try {
-        await axios.post('https://backend-for-messenger.onrender.com/api/logout', {}, { withCredentials: true });
+        await axios.post('http://localhost:3000/api/logout', {}, { withCredentials: true });
         localStorage.removeItem('token');
         localStorage.removeItem('user');
         navigate('/login');

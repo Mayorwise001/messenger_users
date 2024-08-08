@@ -9,8 +9,19 @@ const UserMessages = () => {
 
   useEffect(() => {
     const fetchUsers = async () => {
+        const token = localStorage.getItem('token'); // Retrieve token from localStorage
+        if (!token) {
+          // Handle missing token, e.g., redirect to login
+          console.error('No token found, redirecting to login.');
+          // window.location.href = '/login';
+          return;
+        }
+
+
       try {
-        const res = await axios.get('https://backend-for-messenger.onrender.com/api/users');
+        const res = await axios.get('http://localhost:3000/api/users',{
+        headers: { Authorization:token }
+    });
         setUsers(res.data);
       } catch (err) {
         console.error(err);
