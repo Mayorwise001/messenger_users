@@ -19,7 +19,7 @@ const UserMessages = () => {
 
 
       try {
-        const res = await axios.get('http://localhost:3000/api/users',{
+        const res = await axios.get('https://backend-for-messenger.onrender.com/api/users',{
         headers: { Authorization:token }
     });
         setUsers(res.data);
