@@ -385,7 +385,8 @@ body{
   justify-content: center;
   background-color: #f4f4f4;
   padding: 20px;
-  margin-top: -160px; 
+  margin-top: -160px;
+
 
 }
 
@@ -581,6 +582,134 @@ body{
 }
 
 
+/* users.css */
+
+/* Chat Box Container */
+.chat-box {
+  width: 100%;
+  height: 80vh;
+  background-color: #e5ddd5;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.dark-mode .chat-box {
+  background-color: #000000;
+}
+
+/* Messages Container */
+.messages {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+
+}
+
+/* Individual Message */
+.message {
+  max-width: 60%;
+  margin-bottom: 10px;
+  padding: 10px 15px;
+  border-radius: 20px;
+  position: relative;
+  font-size: 14px;
+  line-height: 1;
+}
+
+/* Sent Message */
+.message.sent {
+  background-color: #DCF8C6; /* Background color for sent messages */
+  align-self: flex-start;  /* Align to the right */
+  text-align: left; /* Align text to the right */
+}
+
+/* Sent Message with Double Tick */
+.message.sent::after {
+  content: '✔✔';
+  font-size: 12px;
+  color: orange;
+  position: absolute;
+  bottom: -20px; /* Adjust as needed */
+  right: 10px;
+}
+
+.message-sender {
+  display: block;
+  font-size: 12px;
+  color: #555;
+  margin-top: 5px;
+}
+/* Received Message */
+.message.received {
+  background-color: #ffffff; /* Background color for received messages */
+  border: 1px solid #ccc;
+  align-self: flex-end; /* Align to the right */
+  text-align: center; /* Align text to the right */
+}
+
+/* Received Message with Green Dot */
+.message.received::before {
+  content: '';
+  width: 10px;
+  height: 10px;
+  background-color: green;
+  border-radius: 50%;
+  position: absolute;
+  top: 10px;
+  left: -15px;
+}
+
+/* Message Input Container */
+.message-input {
+  display: flex;
+  align-items: center;
+  background-color: #f0f0f0;
+  border-radius: 25px;
+  padding: 10px;
+}
+
+/* Message Input Field */
+.message-input input[type="text"] {
+  flex-grow: 1;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 15px;
+  font-size: 14px;
+  outline: none;
+}
+
+/* Send Button */
+.message-input button {
+  background-color: #128c7e;
+  border: none;
+  border-radius: 50%;
+  color: white;
+  padding: 10px 15px;
+  margin-left: 10px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.message-input button:hover {
+  background-color: #075e54;
+}
+
+
+.back-button {
+  display: none;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 16px;
+  color: #000; /* Adjust the color as needed */
+}
+
+
+
+
 
 
 /* Media Queries for Mobile Devices */
@@ -592,6 +721,15 @@ body{
     margin-left: 110px;
   }
 
+  .back-button {
+    display: block; /* Ensure the back button is visible on small screens */
+    margin: 10px;
+    font-size: 16px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
 
 }
 
@@ -601,24 +739,34 @@ body{
     display: inline;
   }
 
+  .welcome-message {
+    display: none; /* Hide the welcome message for screens smaller than 1320px */
+  }
+
+
   .sidebar2 {
-    max-width: 600px;
-    margin: auto;
-    margin-left: 80px;
+    width: 700px;
+;
   }
 
   .sidebar-text {
     display: none;
   }
+  .main-content2 {
+    width: 100%;
+  }
 
+  .back-button {
+    display: block;
+  }
   .sidebar {
     width: 75px; /* Reduced width for smaller screens */
 
   }
 
-.app-container2{
-  flex:none;
-}
+  .app-container2 {
+    flex-direction: column;
+  }
 
 .sidebar-item.toggle-dark-mode {
   flex-direction: column;
@@ -672,10 +820,10 @@ body{
     border-bottom: 1px solid #ddd;
     cursor: pointer;
   }
-  .main-content2 {
-    visibility: hidden;
+
+  .app-container2 {
+    flex-direction: column;
   }
-  
   
   .user-messages-container {
     margin-left: 10px; /* Adjusted for padding */
@@ -705,7 +853,24 @@ body{
     max-width: 100%;
   }
 
+
   
+  .main-content2 {
+    margin-top: 10px;
+    padding: 10px; /* Adjust padding as needed */
+    width: 100%;
+
+  }
+ 
+
+  .back-button {
+    display: block; /* Ensure the back button is visible on small screens */
+    margin: 10px;
+    font-size: 16px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
   
 }
 
@@ -721,17 +886,12 @@ body{
     margin-left: -22px;
   }
   
-  .sidebar2 {
-    width: 350px;
-  }
   
   .sidebar-text {
     display: none;
   }
   
-  .main-content2 {
-    visibility: hidden;
-  }
+ 
  .user-messages-container {
     margin-left: 10px; /* Adjusted for padding */
     flex-grow: 1;
@@ -755,6 +915,38 @@ body{
   .profile-field input,
   .profile-field textarea {
     max-width: 100%;
+  }
+
+
+  .back-button {
+    position: relative;
+    top: -253px;
+    left: 295px;
+    font-size: 16px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #333;
+    display: flex;
+    align-items: center;
+  }
+
+  .main-content2 {
+    margin-top: 10px;
+    padding: 10px; /* Adjust padding as needed */
+    width: 100%;
+
+  }
+
+  .sidebar2 {
+    width: 400px;
+    border-right: none;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+  }
+
+  .app-container2 {
+    flex-direction: column;
   }
 
 }

@@ -70,7 +70,7 @@ const Profile = () => {
 
       if (res.status === 200) {
         setEditable(false);
-        setPreviewImage(userData.profilePicture); // Update the preview image to the saved profile picture
+        // setPreviewImage(userData.profilePicture); // Update the preview image to the saved profile picture
       } else {
         console.error('Failed to save user data.');
       }
@@ -93,7 +93,7 @@ const Profile = () => {
         return;
       }
 
-      axios.put('http://localhost:3000/api/users/me', formData, {
+      axios.put('https://backend-for-messenger.onrender.com/api/users/me', formData, {
         headers: {
           Authorization: token,
           'Content-Type': 'multipart/form-data',
@@ -122,8 +122,8 @@ const Profile = () => {
       <div className="profile-picture-container" style={{ display: 'flex', alignItems: 'center' }}>
       <div style={{ position: 'relative', width: 100, height: 100 }}>
       <img
-        src={previewImage || userData.profilePicture || defaultAvatar}
-        // src={previewImage}
+        // src={previewImage || userData.profilePicture || defaultAvatar}
+        src={previewImage}
         alt="Profile"
         className="profile-picture"
         style={{ width: '100%', height: '100%', borderRadius: '50%' }}
