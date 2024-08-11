@@ -29,7 +29,7 @@ const Profile = () => {
       }
 
       try {
-        const res = await axios.get('https://backend-for-messenger.onrender.com/api/users/me', {
+        const res = await axios.get('http://localhost:3000/api/users/me', {
           headers: { Authorization:token },
         });
 
@@ -38,7 +38,7 @@ const Profile = () => {
             ...prevState,
             ...res.data,
           }));
-        setPreviewImage(res.data.profilePicture ? `https://backend-for-messenger.onrender.com/${res.data.profilePicture}` : defaultAvatar); // Set the preview image to the current profile picture
+        setPreviewImage(res.data.profilePicture ? `http://localhost:3000/${res.data.profilePicture}` : defaultAvatar); // Set the preview image to the current profile picture
         }
       } catch (err) {
         console.error(err);
@@ -64,7 +64,7 @@ const Profile = () => {
     }
 
     try {
-      const res = await axios.put('https://backend-for-messenger.onrender.com/api/users/me', userData, {
+      const res = await axios.put('http://localhost:3000/api/users/me', userData, {
         headers: { Authorization:token },
       });
 
@@ -93,7 +93,7 @@ const Profile = () => {
         return;
       }
 
-      axios.put('https://backend-for-messenger.onrender.com/api/users/me', formData, {
+      axios.put('http://localhost:3000/api/users/me', formData, {
         headers: {
           Authorization: token,
           'Content-Type': 'multipart/form-data',

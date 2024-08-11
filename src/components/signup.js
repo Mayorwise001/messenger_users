@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 import './styles_css/index.css'; // Import the CSS file
 import logo from './images/messenger_image.png'; // Assuming you have a logo image file
 
@@ -13,7 +14,7 @@ const SignUpForm = () => {
     const [message, setMessage] = useState('');
     const [messageType, setMessageType] = useState('');
     const [darkMode, setDarkMode] = useState(false); // State for dark mode
-
+    const navigate = useNavigate(); // Initialize useNavigate
     const handleFirstNameChange = (e) => {
         setFirstName(e.target.value);
         setUsername((e.target.value + lastName).toLowerCase());
@@ -27,7 +28,7 @@ const SignUpForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:3000/api/sign-up', {
+            const response = await axios.post('https://backend-for-messenger.onrender.com/api/sign-up', {
                 firstName,
                 lastName,
                 password,
@@ -35,6 +36,7 @@ const SignUpForm = () => {
             });
             setMessage(response.data.message);
             setMessageType('success');
+            navigate('/');
         } catch (error) {
             setMessage(error.response.data.errors[0].msg);
             setMessageType('error');
