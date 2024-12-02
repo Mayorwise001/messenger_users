@@ -21,7 +21,7 @@ const UserMessages = ({ onSelectUser }) => {
       }
 
       try {
-        const res = await axios.get('https://backend-for-messenger.onrender.com/api/users', {
+        const res = await axios.get('http://localhost:3000/api/users', {
           headers: { Authorization: token },
         });
         setUsers(res.data);
@@ -38,7 +38,7 @@ const UserMessages = ({ onSelectUser }) => {
       }
 
       try {
-        const res = await axios.get('https://backend-for-messenger.onrender.com/api/users/me', {
+        const res = await axios.get('http://localhost:3000/api/users/me', {
           headers: { Authorization: token },
         });
 
@@ -49,7 +49,7 @@ const UserMessages = ({ onSelectUser }) => {
           }));
           setPreviewImage(
             res.data.profilePicture 
-              ? `https://backend-for-messenger.onrender.com/${res.data.profilePicture}` 
+              ? `http://localhost:3000/${res.data.profilePicture}` 
               : profile
           ); // Set the preview image to the current profile picture
         }
@@ -106,7 +106,7 @@ const ChatBox = ({ selectedUser }) => {
       }
 
       try {
-        const res = await axios.get('https://backend-for-messenger.onrender.com/api/users/me', {
+        const res = await axios.get('http://localhost:3000/api/users/me', {
           headers: { Authorization: token },
         });
         setCurrentUser(res.data.firstName); // Store the current user's information
@@ -127,7 +127,7 @@ const ChatBox = ({ selectedUser }) => {
       }
 
       try {
-        const res = await axios.get(`https://backend-for-messenger.onrender.com/api/messages/${selectedUser._id}`, {
+        const res = await axios.get(`http://localhost:3000/api/messages/${selectedUser._id}`, {
           headers: { Authorization: token },
         });
         setMessages(res.data);
@@ -151,7 +151,7 @@ const ChatBox = ({ selectedUser }) => {
 
     try {
       const res = await axios.post(
-        `https://backend-for-messenger.onrender.com/api/messages/${selectedUser._id}`, 
+        `http://localhost:3000/api/messages/${selectedUser._id}`, 
         { 
           text: messageWithUserName, 
           senderName: currentUser?.firstName // Include the current user's name

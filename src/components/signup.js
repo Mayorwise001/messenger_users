@@ -28,7 +28,7 @@ const SignUpForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('https://backend-for-messenger.onrender.com/api/sign-up', {
+            const response = await axios.post('http://localhost:3000/api/sign-up', {
                 firstName,
                 lastName,
                 password,
