@@ -21,7 +21,7 @@ const Login = () => {
         setLoading(true); // Start loading
 
         try {
-            const response = await axios.post('http://localhost:3000/api/login', {
+            const response = await axios.post('https://backend-for-messenger.onrender.com/api/login', {
                 username,
                 password
             });

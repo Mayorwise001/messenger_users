@@ -14,7 +14,7 @@ const ProtectedRoute = () => {
       }
 
       try {
-        const response = await axios.get('http://localhost:3000/api/check-auth', {
+        const response = await axios.get('https://backend-for-messenger.onrender.com/api/check-auth', {
           headers: {
             Authorization: token
           }
